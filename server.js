@@ -1,3 +1,11 @@
+function getQueryString(name) {
+  var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+  var r = window.location.search.substr(1).match(reg);
+  if (r != null) {
+    return unescape(r[2]);
+  }
+  return null;
+}
 function check(thisform) {
 	var name=document.getElementById("name").value;
 	var pass=document.getElementById("pass").value;
@@ -5,7 +13,12 @@ function check(thisform) {
 		alert("登录成功！");
     localStorage.setItem("bookadmin",name);
     localStorage.setItem("bookpwd",pass);
-		window.document.f.action="/server";
+    var target = getQueryString("callBack");
+    if (target == null){
+		  window.document.f.action="/bookstore";
+    } else {
+      window.document.f.action=target;
+    }
 		window.document.f.submit();
 	}
 	else{
