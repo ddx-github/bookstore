@@ -4,10 +4,19 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/bookstore/page.js"></script>
     <script>
+      function get(name) {
+        var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+          return unescape(r[2]);
+        }
+        return null;
+      }
       var type = get("type");
       var paragraph = get("p");
       if (type == "cip") {
         alert("类型：随笔\n公共图书馆索书号：I267.7／");
+        goBack();
       } else if (type == "main") {
         if (paragraph == "1") {
           document.title = "1";
@@ -17,6 +26,7 @@
           document.write("")
         } else {
           alert("正在维护或资源不存在\n按“确定”返回上一级。");
+          goBack();
         }
       }
     </script>
