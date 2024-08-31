@@ -4,6 +4,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/bookstore/page.js"></script>
     <script>
+      function goBack() {
+        window.location.href = document.referrer;
+      }
       function get(name) {
         var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
         var r = window.location.search.substr(1).match(reg);
