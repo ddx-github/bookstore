@@ -1,5 +1,12 @@
 <html>
-  <head><title>加载中……</title></head>
+  <head>
+    <title>加载中……</title>
+    <style> 
+      .paragraph {
+        text-align: center; 
+      } 
+    </style>
+  </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/bookstore/page.js"></script>
@@ -23,7 +30,7 @@
       } else if (type == "main") {
         if (paragraph == "1") {
           document.title = "1";
-          document.write("1<b>2</b>");
+          document.write("<div class='paragraph'><b>1</b></div><br />每次在微博上看到一些情侣的亲密互动，都会不由自主地打心眼儿里感叹、找个喜欢的人谈恋爱，实在是太甜了。<br />为此、身边的朋友总是笑话我说："你找个女朋友难道还不容易吗？只要你肯遍，还不是分分钟就能搞定。"我摇了摇头说："你看看大街上那些牵手的情侣，你能保证他们是真心相爱吗？"现代人谈恋爱、结婚不一定是因为爱情，有的只是为了仓促地完成一项任务，有的只是为了满足当下的欲望。可我并不想这样，就像我曾在朋友圈里发过的一句话：脸蛋再美，身材再好，她对你不够上心，你再喜欢也没用。而到了某个年纪，你会发现谈恋爱这件事，光彼此喜欢已经很难了，真的可以共度余生的人自然更难找。说白了，我其实就是不想将就，可能我一直都是一个在感情上有点");
         } else if (paragraph == "2") {
           document.title = "2";
           document.write("")
